@@ -1,0 +1,38 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+export const AllPage = () => {
+    const [list, setList] = useState([]);
+
+    const nav = { count: 0, next: "", previous: "" };
+
+    const [navigation, setNavigation] = useState(nav);
+
+    const fetchData = () => {
+        axios
+            .get("https://pokeapi.co/api/v2/pokemon")
+            .then((response) => {
+                setList(response.data.results);
+                setNavigation({
+                    count: response.data.count,
+                    next: response.data.next,
+                    previous: response.data.previous,
+                });
+            })
+            .catch((error) => {
+                console.error("Error fetching data: ", error);
+            });
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    return (
+        <div>
+            {list.map((pokemon) => {
+                return <div>{pokemon.name}</div>;
+            })}
+        </div>
+    );
+};
