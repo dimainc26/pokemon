@@ -1,0 +1,391 @@
+:root {
+  --back-color: #333a39;
+  --text-color: white;
+  --green-color: #8dc63f;
+
+  --p-color: ;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Home Page */
+
+.container {
+  background: transparent url("./imgs/pokedex.svg") no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+/* 404 Page */
+/* ---------------------------------------- */
+
+.container-404 {
+  background-color: var(--back-color);
+  width: 90%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.left-box {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 68px;
+  font-weight: bold;
+  line-height: 0;
+  color: var(--text-color);
+}
+
+.sub-title {
+  color: var(--text-color);
+  line-height: 0;
+  font-size: 32px;
+}
+
+.desc {
+  max-width: 300px;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.btn {
+  color: var(--text-color);
+  width: fit-content;
+  padding: 12px 26px;
+  border-radius: 20px;
+  border: solid 1px white;
+}
+
+.btn-off {
+  color: var(--text-color);
+  background-color: var(--back-color);
+  width: fit-content;
+  padding: 12px 26px;
+  border-radius: 20px;
+  border: solid 1px;
+}
+
+.right-box {
+  display: flex;
+  position: relative;
+  width: calc(100% - 30%);
+  justify-content: center;
+  background-image: url(./imgs/pokeball_grigio.png);
+}
+
+.big-text {
+  width: 100%;
+  font-size: 450px;
+  font-weight: bold;
+  line-height: 0px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.img-box {
+  position: absolute;
+  top: 10%;
+  width: 500px;
+  height: 500px;
+  aspect-ratio: 1;
+}
+
+.error-img {
+  width: 100%;
+}
+
+/* Card Page */
+/* ---------------------------------------- */
+
+.container-card {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 89.5dvh;
+  padding: 2.5% 0;
+  background-color: #333a398c;
+  /* background-color: #f9a82594; */
+}
+
+.card-box {
+  width: 1115px;
+  height: 84dvh;
+  padding: 30px;
+  display: flex;
+  background-color: var(--back-color);
+  flex-wrap: wrap;
+  background: url("./imgs/pokeball_grigio.png") no-repeat;
+  background-position: bottom right;
+  border-radius: 18px;
+}
+
+.card-header {
+  width: 100%;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.audio-icon {
+  width: 30px;
+  height: min-content;
+}
+
+.p-name {
+  font-size: 28px;
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+
+.box-left {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.box-row {
+  display: flex;
+  gap: 8px;
+}
+
+.box-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-text {
+  color: var(--text-color);
+  width: 300px;
+}
+
+.p-stat {
+  margin: 4px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.p-stat div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.p-var {
+  color: var(--text-color);
+  display: flex;
+}
+
+.p-int {
+  width: 60px;
+  height: auto;
+  display: flex;
+  justify-content: right;
+  color: var(--text-color);
+}
+
+.stat-container {
+  background-color: var(--text-color);
+  width: 180px;
+  height: 5px;
+  position: relative;
+}
+
+.stat-value {
+  background-color: var(--back-color);
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  top: 0;
+}
+
+.box-right {
+  display: flex;
+  width: 60%;
+  height: 660px;
+}
+
+.box-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 430px;
+  height: 430px;
+}
+
+.p-image {
+  width: 100%;
+  display: flex;
+  position: relative;
+  z-index: 40;
+  animation: zoom 1.4s ease-in;
+}
+
+@keyframes zoom {
+    to {
+        transform: scale(1.4);
+    }
+}
+
+.p-base {
+  top: 100px;
+  width: max-content;
+  position: absolute;
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+  line-height: 0;
+  z-index: 1;
+
+  text-shadow: 8px 8px 3px rgba(0, 0, 0, 0.3);
+}
+
+.mini-box-img {
+  margin: 6px;
+  width: 115px;
+  height: 102px;
+  border-radius: 15px;
+  border: solid var(--text-color) 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mini-p-image {
+  width: 70%;
+}
+
+.box-evolution {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.x {
+  padding-left: 40px;
+}
+
+.box-circle {
+  width: 116px;
+  height: 116px;
+  border-radius: 9999999999999px;
+  border: solid 1px var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-circle-image {
+  width: 90%;
+}
+
+.s {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-height {
+  font-size: 2rem;
+  line-height: 0;
+  color: white;
+}
+
+.t-box {
+  width: max-content;
+  height: 40px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+  align-items: center;
+  position: relative;
+  border: 1px solid white;
+  gap: 10px;
+}
+
+.t-img {
+  margin-left: 0;
+  width: 50px;
+  max-width: 50px;
+  height: 100%;
+}
+
+.t-text {
+  color: white;
+}
+
+
+.close-btn {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 50px;
+    background-color: #333a39;
+    font-size: 24px;
+}
+
+.first-box {
+  margin-top: 8PX;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  background-color: #333a3948;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.first-box .p-text {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+
+}
+
+
+.p-ability {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+}

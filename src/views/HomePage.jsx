@@ -4,11 +4,18 @@ import { Card } from "../components/Card";
 
 export const HomePage = () => {
     const [p, setP] = useState();
+
+    const [isModalOpen, setIsModalOpen] = useState(true);
+
+    const handlePokemonChange = (pokemonData) => {
+        setP(pokemonData);
+        setIsModalOpen(true); 
+    };
+
     return (
-        <div>
-            <h1>Pokédex</h1>
-            <SearchBar onChange={(pk) => setP(pk)} />
-            {p ? <Card pokemon={p} /> : "cerca per tipo"}
+        <div className="container">
+            <SearchBar onChange={handlePokemonChange} />
+            {p && isModalOpen ? <Card pokemon={p} closeModal={() => setIsModalOpen(false)} /> : "cerca per tipo"}
         </div>
     );
 };

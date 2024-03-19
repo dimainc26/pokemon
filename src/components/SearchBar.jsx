@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const SearchBar = (props) => {
-    const [input, setInput] = useState("pikachu");
+    const [input, setInput] = useState("raichu");
 
     const handleChange = (value) => {
         setInput(value);
-        fetchData(value);
+        // fetchData(value);
     };
 
     const [pokemon, setPokemon] = useState();
-    const [datas, setDatas] = useState([]);
 
     const fetchData = () => {
         axios
@@ -26,9 +25,9 @@ const SearchBar = (props) => {
             });
     };
 
-    useEffect(() => {
-        fetchData();
-    }, [input]);
+    // useEffect(() => {
+    //     fetchData();
+    // }, [input]);
 
     return (
         <div className="search-box">
@@ -37,10 +36,9 @@ const SearchBar = (props) => {
                 className="search-input"
                 placeholder="Cerca il Pokemon..."
                 value={input}
-                // onChange={(e) => setInput(e.target.value)}
                 onChange={(e) => handleChange(e.target.value)}
             />
-            <button className="search-button">VAI</button>
+            <button onClick={fetchData} className="search-button">VAI</button>
         </div>
     );
 };
