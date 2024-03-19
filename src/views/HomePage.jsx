@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import { Card } from "../components/Card";
+import { Filter } from "../components/Filter";
 
 export const HomePage = () => {
     const [p, setP] = useState();
@@ -14,8 +15,11 @@ export const HomePage = () => {
 
     return (
         <div className="container">
+            <div className="header">
+                
+            </div>
             <SearchBar onChange={handlePokemonChange} />
-            {p && isModalOpen ? <Card pokemon={p} closeModal={() => setIsModalOpen(false)} /> : "cerca per tipo"}
+            {p && isModalOpen ? <Card pokemon={p} closeModal={() => setIsModalOpen(false)} /> : <Filter />}
         </div>
     );
 };

@@ -10,6 +10,8 @@ import { Button } from "./Button";
 import { Type } from "./Type";
 import { Ranger } from "./Ranger";
 import { SquarePreview } from "./SquarePreview";
+import { General } from "./General";
+import { Ability } from "./Ability";
 
 export const Card = ({ pokemon, closeModal }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -47,9 +49,9 @@ export const Card = ({ pokemon, closeModal }) => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon-species/" + id)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setPokemonSpecies(response.data);
-        console.log(pokemonSpecies);
+        // console.log(pokemonSpecies);
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
@@ -70,9 +72,9 @@ export const Card = ({ pokemon, closeModal }) => {
       axios
         .get("https://pokeapi.co/api/v2/pokemon/" + evo)
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           setPokemonEvo(response.data);
-          console.log(pokemonEvo);
+          // console.log(pokemonEvo);
         })
         .catch((error) => {
           console.error("Error fetching data: ", error);
@@ -126,6 +128,12 @@ export const Card = ({ pokemon, closeModal }) => {
     return finalColor;
   }
 
+  const [activeComponent, setActiveComponent] = useState("General");
+
+  const [mainImage, setMainImage] = useState(
+    pokemon.sprites.other["home"].front_default
+  );
+
   if (pokemon.sprites && pokemon.sprites.front_shiny) {
     return (
       <div className="container-card">
@@ -158,46 +166,32 @@ export const Card = ({ pokemon, closeModal }) => {
           <div className="box-left">
             <div className="box-row">
               <Button
-                off={false}
+                off={activeComponent !== "General"}
                 color={
                   pokemonSpecies ? finalColor(pokemonSpecies.color.name) : "red"
                 }
+                onClick={() => setActiveComponent("General")}
               >
                 Generale
               </Button>
               <Button
-                off={true}
+                off={activeComponent !== "Ability"}
                 color={
                   pokemonSpecies ? finalColor(pokemonSpecies.color.name) : "red"
                 }
+                onClick={() => setActiveComponent("Ability")}
               >
-                Aility
+                Ability
               </Button>
-              {/* <Button
-                off={true}
-                color={
-                  pokemonSpecies ? finalColor(pokemonSpecies.color.name) : "red"
-                }
-              >
-                Regione
-              </Button> */}
             </div>
             <div className="box-column">
-              <div className="first-box">
-                <p className="p-text">
-                  GENERAZIONE : 
-                  {pokemonSpecies
-                    ? pokemonSpecies.generation.name
-                    : "non trovato"}
-                </p>
-                {/* {pokemon.abilities.map((ability, index) => {
-                  return (
-                    <p key={index} className="p-ability">
-                      [ {ability.ability.name} ]
-                    </p>
-                  );
-                })} */}
-              </div>
+              {activeComponent === "General" ? (
+                pokemonSpecies && (
+                  <General generation={pokemonSpecies.generation} />
+                )
+              ) : (
+                <Ability abilities={pokemon.abilities} />
+              )}
 
               <p className="p-text">Tipo</p>
               <div className="box-row">
@@ -250,13 +244,15 @@ export const Card = ({ pokemon, closeModal }) => {
           <div className="box-right">
             <div className="box-row">
               <div className="box-column">
-                <img
+                {/* <img
                   src={pokemon.sprites.other["home"].front_default}
                   alt="Pokemon"
                   className="p-image"
-                />
+                /> */}
+                <div className="big-image">
+                  <img src={mainImage} alt="Pokemon" className="p-image" />
+                </div>
                 <p className="p-base">EXP: {pokemon.base_experience}</p>
-                {/* <p className="p-text x">Evolve da</p> */}
                 <div className="box-evolution">
                   {pokemonEvo ? (
                     <div className="box-circle">
@@ -277,6 +273,11 @@ export const Card = ({ pokemon, closeModal }) => {
                 {pokemon.sprites.other["dream_world"].front_default &&
                   pokemon.sprites.other["dream_world"].front_default && (
                     <SquarePreview
+                      onClick={() =>
+                        setMainImage(
+                          pokemon.sprites.other["dream_world"].front_default
+                        )
+                      }
                       imgLink={
                         pokemon.sprites.other["dream_world"].front_default
                       }
@@ -284,6 +285,11 @@ export const Card = ({ pokemon, closeModal }) => {
                   )}
                 {pokemon.sprites.other["official-artwork"].front_default && (
                   <SquarePreview
+                    onClick={() =>
+                      setMainImage(
+                        pokemon.sprites.other["official-artwork"].front_default
+                      )
+                    }
                     imgLink={
                       pokemon.sprites.other["official-artwork"].front_default
                     }
@@ -291,11 +297,21 @@ export const Card = ({ pokemon, closeModal }) => {
                 )}
                 {pokemon.sprites.other["showdown"].front_default && (
                   <SquarePreview
+                    onClick={() =>
+                      setMainImage(
+                        pokemon.sprites.other["showdown"].front_default
+                      )
+                    }
                     imgLink={pokemon.sprites.other["showdown"].front_default}
                   />
                 )}
                 {pokemon.sprites.other["showdown"].back_default && (
                   <SquarePreview
+                    onClick={() =>
+                      setMainImage(
+                        pokemon.sprites.other["showdown"].back_default
+                      )
+                    }
                     imgLink={pokemon.sprites.other["showdown"].back_default}
                   />
                 )}

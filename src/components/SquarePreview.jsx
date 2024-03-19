@@ -1,6 +1,6 @@
-export const SquarePreview = ({imgLink}) => {
+export const SquarePreview = ({onClick , imgLink}) => {
   return (
-    <div className="mini-box-img">
+    <div onClick={onClick} className="mini-box-img">
       <img
         src={imgLink}
         alt="Pokemon"

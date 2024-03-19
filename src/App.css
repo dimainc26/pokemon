@@ -1,43 +1,52 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-.search-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100dvh;
+.search-box {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.search-input{
-    height: 40px;
-    border-radius: 10px;
-    padding: 0 20px;
-    font-size: 20px;
+.search-input {
+  width: 50%;
+  height: 60px;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-size: 20px;
+  outline: none;
+  border: solid 1px var(--back-color);
 }
 
-.search-button{
-    height: 40px;
-    border-radius: 10px;
-    padding: 0 20px;
-    font-size: 20px;
-    margin-left: 20px;
-    background-color: #4CAF50;
-    color: black;
-    cursor: pointer;
+.search-button {
+  width: 140px;
+  height: 60px;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-size: 20px;
+  margin-left: 20px;
+  background-color: #4caf50;
+  color: black;
+  cursor: pointer;
 }
 
-.searc-button-reset{
-    height: 40px;
-    border-radius: 10px;
-    padding: 0 20px;
-    font-size: 20px;
-    margin-left: 20px;
-    background-color: grey;
-    color: black;
-    cursor: pointer;
+.searc-button-reset {
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-size: 20px;
+  margin-left: 20px;
+  background-color: grey;
+  color: black;
+  cursor: pointer;
+}
+
+.filter-box {
+  margin-top: 80px;
+  width: 100%;
+  padding: 0 8%;
 }

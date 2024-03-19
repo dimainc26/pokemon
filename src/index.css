@@ -19,7 +19,24 @@ button {
   background: transparent url("./imgs/pokedex.svg") no-repeat;
   background-position: top;
   background-size: cover;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
 }
+
+.header {
+  margin-top: 140px;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:  url("./imgs/pokedex.png") no-repeat;
+  background-position: center;
+  background-size: contain;
+
+}
+
 
 /* 404 Page */
 /* ---------------------------------------- */
@@ -224,6 +241,14 @@ button {
   height: 5px;
   position: absolute;
   top: 0;
+  animation: ranger 2s linear forwards;
+}
+
+@keyframes ranger {
+  from {
+    width: 0;
+  }
+  
 }
 
 .box-right {
@@ -232,13 +257,13 @@ button {
   height: 660px;
 }
 
-.box-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  width: 430px;
-  height: 430px;
+.big-image {
+  width: 500px !important;
+  height:500px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .p-image {
@@ -251,7 +276,7 @@ button {
 
 @keyframes zoom {
     to {
-        transform: scale(1.4);
+        transform: scale(1.4) ;
     }
 }
 
