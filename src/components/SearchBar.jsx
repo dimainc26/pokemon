@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const SearchBar = (props) => {
-    const [input, setInput] = useState("raichu");
+    const [input, setInput] = useState("ambipom");
 
     const handleChange = (value) => {
         setInput(value);
@@ -24,6 +25,7 @@ const SearchBar = (props) => {
 
     return (
         <div className="search-box">
+             <Link  className="search-link"  to="/war" >WAR MODE</Link>
             <input
                 type="text"
                 className="search-input"

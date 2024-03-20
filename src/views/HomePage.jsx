@@ -3,6 +3,8 @@ import SearchBar from "../components/SearchBar";
 import { Card } from "../components/Card";
 import { Filter } from "../components/Filter";
 
+import { Link, Route } from "react-router-dom";
+
 export const HomePage = () => {
     const [p, setP] = useState();
 
@@ -16,8 +18,8 @@ export const HomePage = () => {
     return (
         <div className="container">
             <div className="header">
-                
             </div>
+           
             <SearchBar onChange={handlePokemonChange} />
             {p && isModalOpen ? <Card pokemon={p} closeModal={() => setIsModalOpen(false)} /> : <Filter />}
         </div>

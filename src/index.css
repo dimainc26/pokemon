@@ -31,12 +31,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background:  url("./imgs/pokedex.png") no-repeat;
+  background: url("./imgs/pokedex.png") no-repeat;
   background-position: center;
   background-size: contain;
-
 }
-
 
 /* 404 Page */
 /* ---------------------------------------- */
@@ -248,7 +246,6 @@ button {
   from {
     width: 0;
   }
-  
 }
 
 .box-right {
@@ -257,10 +254,9 @@ button {
   height: 660px;
 }
 
-
 .big-image {
   width: 500px !important;
-  height:500px !important;
+  height: 500px !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -275,9 +271,9 @@ button {
 }
 
 @keyframes zoom {
-    to {
-        transform: scale(1.4) ;
-    }
+  to {
+    transform: scale(1.4);
+  }
 }
 
 .p-base {
@@ -376,19 +372,18 @@ button {
   color: white;
 }
 
-
 .close-btn {
-    position: absolute;
-    bottom: 10px;
-    left: calc(50% - 100px);
-    width: 200px;
-    height: 50px;
-    background-color: #333a39;
-    font-size: 24px;
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 50px;
+  background-color: #333a39;
+  font-size: 24px;
 }
 
 .first-box {
-  margin-top: 8PX;
+  margin-top: 8px;
   height: 140px;
   align-items: center;
   justify-content: center;
@@ -404,13 +399,122 @@ button {
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-
 }
-
 
 .p-ability {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 2px;
   color: white;
+}
+
+/* War Page */
+
+.war-container {
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--back-color);
+}
+
+.war-box {
+  background-color: rebeccapurple;
+  width: 100%;
+  height: 80dvh;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.p-box {
+  width: 320px;
+  height: 120px;
+  background-color: #2b2b2b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px;
+  border: solid 4px black;
+}
+
+.p-level,
+.p-nam,
+.p-hp {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.y {
+  display: flex;
+  align-items: center;
+} 
+
+.p-hp .stat-container {
+  margin-left: 40px;
+  height: 20px;
+}
+
+.p-hp .stat-value {
+  height: 20px;
+  background-color: green;
+}
+
+.p-mini {
+  color: white;
+}
+
+.player1-box {
+  position: absolute;
+  bottom: 10px;
+  right: 70px;
+}
+
+.player2-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.pokemon-area1 {
+  position: absolute;
+  bottom: 20px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pokemon-area2 {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+}
+
+.search-link {
+  background-color: green;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
 }
